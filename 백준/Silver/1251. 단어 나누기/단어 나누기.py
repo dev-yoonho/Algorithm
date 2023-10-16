@@ -2,7 +2,6 @@ import sys
 from collections import deque
 
 s = list(sys.stdin.readline().rstrip())
-answer = []
 temp = []
 
 for i in range(1, len(s) - 1):
