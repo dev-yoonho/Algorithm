@@ -20,15 +20,15 @@ public class Main {
 			
 			for (int x = 1;x <= a; x++) {
 				for (int y = 1;y <= b;y++) {
+					int xmody = x % y;
 					for (int z = 1;z <= c;z++) {
-						if (x % y == y %z && y % z == z % x) {
+						if (xmody == y %z && y % z == z % x) {
 							cnt++;
 						}
 					}
 				}
 			}
 			System.out.println(cnt);
-			
 		}
 	}
 }
