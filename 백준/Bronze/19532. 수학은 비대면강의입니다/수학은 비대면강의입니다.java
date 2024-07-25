@@ -15,11 +15,12 @@ public class Main {
 		int e = Integer.parseInt(st.nextToken());
 		int f = Integer.parseInt(st.nextToken());
 		
+        outer:
 		for (int i = -999;i < 1000;i++) {
 			for (int j = -999;j < 1000;j++) {
 				if ((a * i + b * j == c) && (d * i + e *j == f)) {
 					System.out.println(String.format("%d %d", i, j));
-					break;
+					break outer;
 				}
 			}
 		}
