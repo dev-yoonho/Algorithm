@@ -1,1 +1,1 @@
-SELECT animal_id, name from animal_ins;
+SELECT animal_id, name from animal_ins ORDER BY animal_id;
