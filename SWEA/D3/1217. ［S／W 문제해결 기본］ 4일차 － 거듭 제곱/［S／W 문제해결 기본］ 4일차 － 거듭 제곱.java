@@ -4,22 +4,25 @@ public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		for (int tc = 0;tc < 10;tc++) {
-			// 테스트 케이스 번호 t
-			int t = sc.nextInt();
-			// 대상 숫자 n, 거듭제곱 횟수 m
-			int n = sc.nextInt(), m = sc.nextInt();
+		int t = 10;
+		
+		for (int tc = 1; tc <= t;tc++) {
+			int tNum = sc.nextInt();
+			int n = sc.nextInt(), k = sc.nextInt();
 			
-			System.out.printf("#%d %d\n", t, pow(n, m));
+			System.out.printf("#%d %d\n", tNum, pow(n, k));
 		}
-		sc.close();
+
 	}
 
-	static int pow(int n, int m) {
-		if (m > 0) {
-			return n * pow(n, m - 1);
+	static int pow(int n, int k) {
+		// 기저조건
+		if (k == 1) return n;
+		// 재귀부분
+		if (k % 2 == 0) {
+			return pow(n, k / 2) * pow(n, k / 2);
 		} else {
-			return 1;
-		}
+			return pow(n, (k - 1) / 2) * pow(n, (k - 1) / 2) * n;
+		}	
 	}
 }
