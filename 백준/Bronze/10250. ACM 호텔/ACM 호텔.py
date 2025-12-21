@@ -1,10 +1,14 @@
 import sys
+input = sys.stdin.readline
 
-t = int(sys.stdin.readline())
+t = int(input())
 for _ in range(t):
-    h, w, n = map(int, sys.stdin.readline().split())
-    a, b = divmod(n, h)
-    if b == 0:
-        b = h
-        a -= 1
-    print(b * 100 + a + 1)
+    h, w, n = map(int, input().split())
+
+    floor = n % h
+    room = n // h + 1
+
+    if floor == 0:
+        floor = h
+        room -= 1
+    print(floor*100+room)
