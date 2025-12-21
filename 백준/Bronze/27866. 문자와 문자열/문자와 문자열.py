@@ -1,0 +1,1 @@
+print((s:=input())[i:=int(input())-1])
