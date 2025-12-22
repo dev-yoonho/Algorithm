@@ -1,8 +1,11 @@
 import sys
+input = sys.stdin.readline
 
-n = int(sys.stdin.readline())
-temp = [x for x in range(n-1, 0, -1) if x + sum([int(i) for i in str(x)]) == n]
-if temp:
-    print(min(temp))
-else:
-    print(0)
+n = int(input())
+
+result = 0
+for i in range(n//2, n):
+    if (i + sum([int(j) for j in str(i)])) == n:
+        result = i
+        break
+print(result)
