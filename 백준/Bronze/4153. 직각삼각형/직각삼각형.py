@@ -1,11 +1,9 @@
 import sys
+input = sys.stdin.readline
 
-n_list = sorted(list(map(int, sys.stdin.readline().split())))
-while 0 not in n_list:
-    if n_list[0] + n_list[1] <= n_list[2]:
-        continue
-    if n_list[0] ** 2 + n_list[1] ** 2 == n_list[2] ** 2:
-        print("right")
-    else:
-        print("wrong")
-    n_list = sorted(list(map(int, sys.stdin.readline().split())))
+while True:
+    n_list = list(map(int, input().split()))
+    if n_list.count(0) > 0:
+        break
+    n_list.sort()
+    print("right") if pow(n_list[2], 2) == (pow(n_list[0], 2) + pow(n_list[1], 2)) else print("wrong")
