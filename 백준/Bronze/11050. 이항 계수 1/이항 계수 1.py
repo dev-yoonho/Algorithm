@@ -1,12 +1,16 @@
 import sys
-from itertools import combinations
+input = sys.stdin.readline
 
-n, k = map(int, sys.stdin.readline().split())
-up, down, minus = 1, 1, 1
-for i in range(1, n + 1):
-    up *= i
-for j in range(1, k + 1):
-    down *= j
-for l in range(1, n - k + 1):
-    minus *= l
-print(up // (down * minus))
+n, k = map(int, input().split())
+
+if k > n // 2:
+    k = n - k
+
+answer = 1
+for i in range(n, n-k, -1):
+    answer *= i
+
+for j in range(2, k+1):
+    answer //= j
+
+print(answer)
