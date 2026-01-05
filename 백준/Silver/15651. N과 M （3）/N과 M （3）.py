@@ -8,18 +8,13 @@ def backtrack():
         return
 
     for i in range(1, n+1):
-        if not visited[i]:
-            result.append(i)
-
-            backtrack()
-
-            result.pop()
+        result.append(i)
+        backtrack()
+        result.pop()
 
 
 
 n, m = map(int, input().split())
-
-visited = [False] * (n+1)
 result = []
 
 backtrack()
